@@ -1,4 +1,4 @@
-#Caso práctico. Diseño de un proyecto de aprendizaje para el emprendimiento
+# Caso práctico. Diseño de un proyecto de aprendizaje para el emprendimiento
 ## 1. Descripción Ejecutiva del Proyecto
 El proyecto, titulado "Agencia Digital STEAM", asume el rol de un consultor educativo trabajando para la Institución Educativa Distrital (I.E.D.) Simón Bolívar, ubicada en la ciudad de Barranquilla (estrato 2). La propuesta está diseñada para estudiantes de 9º grado (14-15 años), buscando transformar su perfil de "consumidores digitales pasivos" a "creadores activos" mediante la metodología de Educación 3.0.
 Fundamentación y Metodología:
