@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entorno Digital Colaborativo - Caso Práctico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .slide { display: none; animation: fadeIn 0.5s ease-in-out; }
+        .slide.active { display: block; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .nav-btn.active { background-color: #2563eb; color: white; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 h-screen overflow-hidden flex flex-col md:flex-row">
+
+    <!-- Sidebar / Navegación -->
+    <aside class="w-full md:w-1/4 bg-white shadow-xl z-10 flex flex-col h-auto md:h-full">
+        <div class="p-6 bg-blue-700 text-white">
+            <h1 class="text-2xl font-bold"><i class="fas fa-laptop-code mr-2"></i> TecnoEdu</h1>
+            <p class="text-sm mt-2 opacity-80">Maestría en Tecnología Educativa</p>
+        </div>
+        <nav class="flex-1 overflow-y-auto p-4 space-y-2">
+            <button onclick="showSlide(0)" id="btn-0" class="nav-btn w-full text-left p-3 rounded-lg hover:bg-blue-50 transition active flex items-center font-semibold text-sm">
+                <i class="fas fa-home w-6"></i> Inicio y Contexto
+            </button>
+            <button onclick="showSlide(1)" id="btn-1" class="nav-btn w-full text-left p-3 rounded-lg hover:bg-blue-50 transition flex items-center font-semibold text-sm text-gray-600">
+                <i class="fas fa-project-diagram w-6"></i> 1. Diseño de Experiencia
+            </button>
+            <button onclick="showSlide(2)" id="btn-2" class="nav-btn w-full text-left p-3 rounded-lg hover:bg-blue-50 transition flex items-center font-semibold text-sm text-gray-600">
+                <i class="fas fa-tools w-6"></i> 2. Herramientas
+            </button>
+            <button onclick="showSlide(3)" id="btn-3" class="nav-btn w-full text-left p-3 rounded-lg hover:bg-blue-50 transition flex items-center font-semibold text-sm text-gray-600">
+                <i class="fas fa-users-cog w-6"></i> 3. Organización
+            </button>
+            <button onclick="showSlide(4)" id="btn-4" class="nav-btn w-full text-left p-3 rounded-lg hover:bg-blue-50 transition flex items-center font-semibold text-sm text-gray-600">
+                <i class="fas fa-tasks w-6"></i> 4. Evaluación
+            </button>
+            <button onclick="showSlide(5)" id="btn-5" class="nav-btn w-full text-left p-3 rounded-lg hover:bg-blue-50 transition flex items-center font-semibold text-sm text-gray-600">
+                <i class="fas fa-lightbulb w-6"></i> 5. Reflexión Final
+            </button>
+        </nav>
+        <div class="p-4 border-t text-xs text-gray-400 text-center">
+            Caso Práctico - Trabajo Colaborativo
+        </div>
+    </aside>
+
+    <!-- Área de Contenido Principal -->
+    <main class="w-full md:w-3/4 h-full overflow-y-auto p-6 md:p-12 relative bg-gray-50">
+        
+        <!-- Controles Inferiores Flotantes -->
+        <div class="fixed bottom-6 right-6 flex space-x-3 z-50">
+            <button onclick="prevSlide()" class="bg-gray-800 text-white px-4 py-2 rounded-full shadow hover:bg-gray-700 transition">
+                <i class="fas fa-chevron-left"></i> Anterior
+            </button>
+            <button onclick="nextSlide()" class="bg-blue-600 text-white px-4 py-2 rounded-full shadow hover:bg-blue-700 transition">
+                Siguiente <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- Slide 0: Inicio -->
+        <section id="slide-0" class="slide active h-full flex flex-col justify-center">
+            <div class="bg-white p-10 rounded-2xl shadow-lg border border-gray-100 text-center max-w-3xl mx-auto">
+                <div class="inline-block p-4 bg-blue-100 text-blue-600 rounded-full mb-6">
+                    <i class="fas fa-globe-americas text-5xl"></i>
+                </div>
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Diseño de un Entorno Digital Colaborativo</h2>
+                <h3 class="text-xl text-gray-500 mb-8">Proyecto: "Prototipado de una Ciudad Inteligente y Sostenible"</h3>
+                <div class="text-left bg-gray-50 p-6 rounded-lg border text-sm text-gray-700">
+                    <p><strong>Nivel Educativo:</strong> Educación Media (Grado 10°).</p>
+                    <p><strong>Área:</strong> Tecnología e Informática.</p>
+                    <p><strong>Metodología:</strong> Aprendizaje Basado en Problemas (ABP) + Enfoque Maker.</p>
+                    <p class="mt-4 italic">Esta presentación interactiva da respuesta al caso práctico planteado en la maestría, estructurando una propuesta pedagógica mediada por TIC.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 1: Diseño de la experiencia -->
+        <section id="slide-1" class="slide h-full">
+            <h2 class="text-3xl font-bold text-blue-700 mb-6 border-b pb-2">1. Diseño de la experiencia colaborativa</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold text-gray-800 mb-3"><i class="fas fa-bullseye text-blue-500 mr-2"></i> Objetivo del Reto</h3>
+                    <p class="text-gray-600 text-sm">Diseñar de forma colaborativa el prototipo funcional de una solución tecnológica (IoT, sensores, energías limpias) que resuelva un problema medioambiental o de movilidad del entorno local de los estudiantes.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold text-gray-800 mb-3"><i class="fas fa-users text-blue-500 mr-2"></i> Agrupamiento</h3>
+                    <p class="text-gray-600 text-sm">Pequeños equipos base de <strong>4 estudiantes</strong>. Se utiliza un agrupamiento heterogéneo basado en fortalezas (uno técnico, uno creativo, uno organizador, uno comunicador) para garantizar la interdependencia positiva.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 md:col-span-2">
+                    <h3 class="text-lg font-bold text-gray-800 mb-3"><i class="fas fa-box-open text-blue-500 mr-2"></i> Producto Final</h3>
+                    <p class="text-gray-600 text-sm">Un <strong>Portafolio Digital Interactivo (Sitio Web)</strong> construido colaborativamente que documente la investigación, y que integre un <strong>prototipo digital 3D</strong> y de simulación de circuitos de la solución propuesta.</p>
+                </div>
+            </div>
+            
+            <div class="mt-6 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 class="text-lg font-bold text-gray-800 mb-4"><i class="fas fa-stream text-blue-500 mr-2"></i> Fases del Trabajo</h3>
+                <div class="space-y-4">
+                    <div class="flex">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold mr-4">1</div>
+                        <div>
+                            <h4 class="font-bold text-sm">Inicio (Investigación y empatía)</h4>
+                            <p class="text-xs text-gray-500">Presentación del reto, formación de equipos, asignación de roles. Lluvia de ideas sobre problemas locales e investigación en fuentes digitales.</p>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold mr-4">2</div>
+                        <div>
+                            <h4 class="font-bold text-sm">Desarrollo (Diseño y Enfoque Maker)</h4>
+                            <p class="text-xs text-gray-500">Creación del entorno web (coautoría). Diseño del prototipo 3D y simulación electrónica. Toma de decisiones conjunta y retroalimentación formativa.</p>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold mr-4">3</div>
+                        <div>
+                            <h4 class="font-bold text-sm">Cierre (Socialización y evaluación)</h4>
+                            <p class="text-xs text-gray-500">Presentación pública (pitch) del sitio web y el prototipo a la clase. Procesos de autoevaluación y coevaluación.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 2: Herramientas -->
+        <section id="slide-2" class="slide h-full">
+            <h2 class="text-3xl font-bold text-blue-700 mb-6 border-b pb-2">2. Herramientas Colaborativas</h2>
+            
+            <div class="space-y-6">
+                <!-- Herramienta Principal -->
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-500">
+                    <div class="flex items-center mb-3">
+                        <i class="fab fa-trello text-3xl text-blue-600 mr-3"></i>
+                        <h3 class="text-xl font-bold text-gray-800">Trello (Herramienta Principal Seleccionada)</h3>
+                    </div>
+                    <p class="text-sm font-semibold text-gray-700 mb-2">Función: Organización, gestión de tareas y seguimiento.</p>
+                    <p class="text-gray-600 text-sm mb-3">Los estudiantes utilizarán tableros Kanban (Columnas: Pendiente, En proceso, Revisión, Terminado) para gestionar su proyecto ABP.</p>
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="text-sm font-bold text-blue-800 mb-1">Justificación Pedagógica</h4>
+                        <p class="text-xs text-blue-900">Desde la perspectiva de los Entornos Virtuales (EVEA), Trello fomenta la <strong>transparencia y la interdependencia positiva</strong>. Permite visualizar el aporte de cada miembro en tiempo real. Asignar tarjetas a responsables específicos previene el "efecto polizón" (freerider) y ayuda al docente a realizar un seguimiento formativo del proceso, no solo del resultado, alineándose con las metodologías activas.</p>
+                    </div>
+                </div>
+
+                <!-- Herramientas Complementarias (Valor añadido) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+                        <div class="flex items-center mb-2">
+                            <i class="fab fa-google text-2xl text-red-500 mr-2"></i>
+                            <h3 class="font-bold text-gray-800">Google Sites & Docs</h3>
+                        </div>
+                        <p class="text-xs text-gray-600"><strong>Función:</strong> Coautoría y producto final.<br><strong>Justificación:</strong> Permite la edición simultánea (trabajo sincrónico y asincrónico). El historial de versiones es vital pedagógicamente para evaluar la participación real de cada estudiante en la construcción del conocimiento.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-cube text-2xl text-green-500 mr-2"></i>
+                            <h3 class="font-bold text-gray-800">Tinkercad</h3>
+                        </div>
+                        <p class="text-xs text-gray-600"><strong>Función:</strong> Prototipado colaborativo.<br><strong>Justificación:</strong> Responde al "Enfoque Maker". Permite a los estudiantes trabajar en el mismo diseño 3D o circuito de forma remota, aplicando conceptos STEM directamente al reto planteado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3: Organización y Coordinación -->
+        <section id="slide-3" class="slide h-full">
+            <h2 class="text-3xl font-bold text-blue-700 mb-6 border-b pb-2">3. Organización y Coordinación</h2>
+            
+            <div class="grid grid-cols-1 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4"><i class="fas fa-user-tag text-blue-500 mr-2"></i> Distribución de Roles</h3>
+                    <p class="text-sm text-gray-600 mb-4">Para garantizar la <em>interdependencia positiva</em> (esencial en el aprendizaje cooperativo), se asignan roles rotativos o fijos según la necesidad:</p>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-blue-50 p-3 rounded text-center">
+                            <i class="fas fa-sitemap text-blue-600 mb-2"></i>
+                            <p class="text-xs font-bold">Gestor de Proyecto</p>
+                            <p class="text-[10px] text-gray-500">Administra Trello, verifica plazos.</p>
+                        </div>
+                        <div class="bg-blue-50 p-3 rounded text-center">
+                            <i class="fas fa-search text-blue-600 mb-2"></i>
+                            <p class="text-xs font-bold">Investigador</p>
+                            <p class="text-[10px] text-gray-500">Busca fuentes, filtra información.</p>
+                        </div>
+                        <div class="bg-blue-50 p-3 rounded text-center">
+                            <i class="fas fa-paint-brush text-blue-600 mb-2"></i>
+                            <p class="text-xs font-bold">Diseñador Maker</p>
+                            <p class="text-[10px] text-gray-500">Lidera Tinkercad y montaje.</p>
+                        </div>
+                        <div class="bg-blue-50 p-3 rounded text-center">
+                            <i class="fas fa-bullhorn text-blue-600 mb-2"></i>
+                            <p class="text-xs font-bold">Comunicador</p>
+                            <p class="text-[10px] text-gray-500">Edita G. Sites y lidera la exposición.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                        <h3 class="text-lg font-bold text-gray-800 mb-3"><i class="fas fa-comments text-blue-500 mr-2"></i> Comunicación y Decisiones</h3>
+                        <ul class="text-sm text-gray-600 space-y-2 list-disc ml-4">
+                            <li><strong>Asincrónica:</strong> Comentarios dentro de las tarjetas de Trello y menciones en Google Docs.</li>
+                            <li><strong>Sincrónica:</strong> "Reuniones de pie" (Daily Standups) de 10 minutos al inicio de cada clase presencial/virtual para coordinar acciones del día.</li>
+                            <li><strong>Decisiones:</strong> Por consenso. Si hay empate, el Gestor de Proyecto tiene voto de calidad tras debatir los pros y contras.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                        <h3 class="text-lg font-bold text-gray-800 mb-3"><i class="fas fa-eye text-blue-500 mr-2"></i> Mecanismos de Seguimiento</h3>
+                        <ul class="text-sm text-gray-600 space-y-2 list-disc ml-4">
+                            <li>El docente actúa como "Cliente/Asesor", revisando los tableros de Trello semanalmente.</li>
+                            <li>Uso del <strong>Historial de Versiones</strong> de Google para auditar la coautoría equitativa (prevención de problemas de grupo).</li>
+                            <li>Entregables parciales obligatorios antes del producto final para aplicar feedback formativo oportuno.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: Evaluación -->
+        <section id="slide-4" class="slide h-full">
+            <h2 class="text-3xl font-bold text-blue-700 mb-6 border-b pb-2">4. Evaluación del trabajo colaborativo</h2>
+            
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 h-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    <!-- Qué se evalúa -->
+                    <div>
+                        <div class="flex items-center mb-3">
+                            <div class="w-8 h-8 rounded bg-blue-100 text-blue-600 flex justify-center items-center font-bold mr-3">1</div>
+                            <h3 class="font-bold text-gray-800">¿Qué se evalúa?</h3>
+                        </div>
+                        <ul class="text-sm text-gray-600 space-y-2 ml-11 list-disc">
+                            <li><strong>Proceso (40%):</strong> Dinámica de grupo, uso de Trello, cumplimiento de roles, resolución de conflictos.</li>
+                            <li><strong>Producto Final (40%):</strong> Calidad del prototipo tecnológico y del portafolio web (aplicación de saberes de informática).</li>
+                            <li><strong>Participación/Actitud (20%):</strong> Interdependencia, respeto, aporte individual al logro colectivo.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Instrumentos -->
+                    <div>
+                        <div class="flex items-center mb-3">
+                            <div class="w-8 h-8 rounded bg-green-100 text-green-600 flex justify-center items-center font-bold mr-3">2</div>
+                            <h3 class="font-bold text-gray-800">Instrumentos</h3>
+                        </div>
+                        <ul class="text-sm text-gray-600 space-y-2 ml-11 list-disc">
+                            <li><strong>Rúbrica Analítica:</strong> Para el producto final (evaluada por el docente).</li>
+                            <li><strong>Coevaluación (por pares):</strong> Formulario de Google donde cada alumno evalúa el desempeño de sus compañeros (ej. CoRubrics).</li>
+                            <li><strong>Autoevaluación:</strong> Diario reflexivo breve al cierre del proyecto (metacognición).</li>
+                        </ul>
+                    </div>
+
+                    <!-- Fomento de Responsabilidad -->
+                    <div>
+                        <div class="flex items-center mb-3">
+                            <div class="w-8 h-8 rounded bg-purple-100 text-purple-600 flex justify-center items-center font-bold mr-3">3</div>
+                            <h3 class="font-bold text-gray-800">Responsabilidad</h3>
+                        </div>
+                        <p class="text-sm text-gray-600 ml-11 mb-2">La responsabilidad se fomenta mediante la <strong>calificación compartida con notas individuales ajustadas</strong>.</p>
+                        <p class="text-sm text-gray-600 ml-11">El producto tiene una nota grupal, pero la nota final de cada estudiante se modula mediante los resultados de la coevaluación y el rastreo de aportes en las herramientas digitales, asegurando que nadie apruebe solo por el trabajo de los demás.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: Reflexión Final -->
+        <section id="slide-5" class="slide h-full">
+            <h2 class="text-3xl font-bold text-blue-700 mb-6 border-b pb-2">5. Reflexión Final</h2>
+            
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-sm text-gray-700 leading-relaxed overflow-y-auto max-h-[70vh]">
+                <p class="mb-4">
+                    El diseño de esta experiencia colaborativa representa un cambio de paradigma frente a la enseñanza tradicional de la informática. Al articular el <strong>Aprendizaje Basado en Problemas (ABP)</strong> con el <strong>Enfoque Maker</strong> y el uso estratégico de herramientas como Trello y Google Workspace, se trasciende la simple alfabetización digital ("aprender a usar software") para llegar a la verdadera <strong>Competencia Digital Docente y Discente</strong>: utilizar la tecnología para resolver problemas reales, comunicar, crear y colaborar.
+                </p>
+                
+                <h4 class="font-bold text-blue-800 mt-6 mb-2">Ventajas Pedagógicas</h4>
+                <p class="mb-4">
+                    La principal ventaja de esta propuesta es la generación de una auténtica <strong>interdependencia positiva</strong>. El uso de Trello materializa la organización mental del equipo, haciendo visible el flujo de trabajo. Al asignar roles específicos, los estudiantes pasan de ser receptores pasivos a constructores activos de su propio Entorno Virtual de Enseñanza-Aprendizaje (EVEA). Además, el sistema de evaluación propuesto (integrando coevaluación) democratiza el aula y desarrolla habilidades blandas vitales para el siglo XXI: el pensamiento crítico, la autorregulación y la empatía.
+                </p>
+
+                <h4 class="font-bold text-blue-800 mt-4 mb-2">Retos y Limitaciones</h4>
+                <p class="mb-4">
+                    No obstante, la implementación de este diseño enfrenta retos significativos. El principal es la <strong>brecha digital</strong>; el trabajo sincrónico en herramientas como Tinkercad exige conectividad estable y dispositivos adecuados, lo cual no siempre está garantizado en todos los contextos educativos. Asimismo, existe el reto de la <em>madurez colaborativa</em> del alumnado. Acostumbrados al trabajo individualista, los estudiantes pueden frustrarse inicialmente ante la necesidad de negociar decisiones y depender de sus pares. 
+                </p>
+
+                <p>
+                    Como docente e ingeniero, la reflexión final es que la herramienta digital no es el fin, sino el medio. Trello o Sites carecen de impacto educativo si no están soportados por un andamiaje pedagógico sólido. Mi labor transita de ser un transmisor de código a un diseñador de experiencias, donde el mayor éxito no es que el prototipo funcione perfectamente, sino que el equipo haya aprendido a gestionar sus diferencias y colaborar en red para construir un resultado común.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 6;
+
+        function showSlide(index) {
+            // Ocultar todos
+            document.querySelectorAll('.slide').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(el => {
+                el.classList.remove('active', 'bg-blue-100', 'text-blue-800');
+                el.classList.add('text-gray-600');
+            });
+            
+            // Mostrar actual
+            document.getElementById(`slide-${index}`).classList.add('active');
+            
+            // Estilos del boton de navegacion
+            const activeBtn = document.getElementById(`btn-${index}`);
+            activeBtn.classList.add('active');
+            activeBtn.classList.remove('text-gray-600');
+
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                showSlide(currentSlide + 1);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                showSlide(currentSlide - 1);
+            }
+        }
+    </script>
+</body>
+</html>
