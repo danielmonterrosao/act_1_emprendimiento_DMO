@@ -9,8 +9,8 @@ Fundamentación y Metodología:
 ## 2. Enlace de Acceso a la Presentación
 La presentación ha sido diseñada de forma interactiva y visual para exponer en detalle los objetivos, el ecosistema de herramientas TIC seleccionadas y el plan de implementación docente.
 Enlace de la presentación:
-🔗 [Pega aquí tu enlace web, ej: https://tu-usuario.github.io/presentacion-steam/ o tu enlace de Canva/Genially]
-(Nota para el evaluador: El enlace ha sido configurado con acceso público. Para una correcta visualización de las animaciones y elementos interactivos, se recomienda abrirlo en un navegador de escritorio actualizado).
+🔗 https://danielmonterrosao.github.io/act_1_emprendimiento_DMO/
+
 ## 3. Referencias Bibliográficas
 •	Brown, T. (2008). Design Thinking. Harvard Business Review, 86(6), 84-92.
 •	Marzano, R. J., & Kendall, J. S. (2007). The New Taxonomy of Educational Objectives (2nd ed.). Corwin Press.
